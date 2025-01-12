@@ -19,7 +19,7 @@ import javax.inject.Singleton
             OkHttpClient.Builder()
                     .addInterceptor { chain ->
                         var request = chain.request()
-                        val url = request.url().newBuilder()
+                        val url = request.url.newBuilder()
                                 .addQueryParameter("site", "stackoverflow")
                                 .addQueryParameter("key", "fruiv4j48P0HjSJ8t7a8Gg((")
                                 .build()
