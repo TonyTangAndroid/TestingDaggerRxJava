@@ -1,10 +1,9 @@
 package it.droidcon.testingdaggerrxjava.userlist
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.design.widget.Snackbar.LENGTH_LONG
-import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import it.droidcon.testingdaggerrxjava.R
 import it.droidcon.testingdaggerrxjava.component
 import javax.inject.Inject
@@ -24,6 +23,7 @@ class UserListActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.text).text = s
     }
 
-    fun showError(t: Throwable) =
-            Snackbar.make(findViewById(android.R.id.content), t.message ?: "", LENGTH_LONG).show()
+    fun showError(t: Throwable) {
+        Toast.makeText(this, t.message, Toast.LENGTH_SHORT).show()
+    }
 }

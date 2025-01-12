@@ -3,19 +3,20 @@ apply plugin: 'org.jetbrains.kotlin.android'
 apply plugin: 'org.jetbrains.kotlin.kapt'
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion "28.0.0"
+    namespace 'it.droidcon.testingdaggerrxjava'
+    compileSdk 35
     defaultConfig {
         applicationId "it.droidcon.testingdaggerrxjava"
-        minSdkVersion 16
-        targetSdkVersion 28
+        minSdkVersion 26
+        //noinspection EditedTargetSdkVersion
+        targetSdk 35
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner 'it.droidcon.testingdaggerrxjava.MyTestRunner'
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     sourceSets {
         androidTest.java.srcDirs += "src/test-common/java"
@@ -24,44 +25,37 @@ android {
 }
 
 dependencies {
-    api 'com.android.support:appcompat-v7:28.0.0'
-    api 'com.android.support:design:28.0.0'
-    api 'com.google.code.gson:gson:2.8.1'
+    api 'androidx.appcompat:appcompat:1.7.0'
+    api 'com.google.code.gson:gson:2.11.0'
 
-    api 'com.squareup.retrofit2:retrofit:2.3.0'
-    api 'com.squareup.retrofit2:converter-gson:2.3.0'
-    api 'com.squareup.okhttp3:okhttp:3.8.1'
-    api 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+    api 'com.squareup.retrofit2:retrofit:2.11.0'
+    api 'com.squareup.retrofit2:converter-gson:2.11.0'
+    api 'com.squareup.okhttp3:okhttp:4.12.0'
+    api 'com.squareup.okhttp3:logging-interceptor:4.12.0'
 
-    api 'io.reactivex.rxjava2:rxjava:2.1.2'
-    api 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    api 'io.reactivex.rxjava2:rxjava:2.2.21'
+    api 'io.reactivex.rxjava2:rxandroid:2.1.1'
     api 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
 
-    api 'com.google.dagger:dagger:2.12'
-    kapt 'com.google.dagger:dagger-compiler:2.12'
+    api 'com.google.dagger:dagger:2.54'
+    kapt 'com.google.dagger:dagger-compiler:2.54'
 
-    testImplementation 'junit:junit:4.12'
-    testImplementation 'org.mockito:mockito-core:2.8.47'
-    testImplementation "org.mockito:mockito-inline:2.8.47"
-    //noinspection GradleDependency
-    testImplementation 'org.assertj:assertj-core:2.8.0'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.mockito:mockito-core:5.12.0'
+    testImplementation "org.mockito:mockito-inline:3.12.4"
+    testImplementation 'org.assertj:assertj-core:3.26.3'
     testImplementation 'com.willowtreeapps.assertk:assertk:0.9'
-    testImplementation 'com.github.fabioCollini.daggermock:daggermock:0.8.2'
-    testImplementation 'com.github.fabioCollini.daggermock:daggermock-kotlin:0.8.2'
-    testImplementation('com.nhaarman:mockito-kotlin-kt1.1:1.5.0') {
-        exclude group: 'org.jetbrains.kotlin'
-    }
-
-    kaptAndroidTest 'com.google.dagger:dagger-compiler:2.12'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    androidTestImplementation 'com.github.fabioCollini.daggermock:daggermock:0.8.2'
-    androidTestImplementation 'com.github.fabioCollini.daggermock:daggermock-kotlin:0.8.2'
-    androidTestImplementation 'org.mockito:mockito-android:2.8.47'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test:rules:1.0.1'
-    androidTestImplementation('com.nhaarman:mockito-kotlin-kt1.1:1.5.0') {
-        exclude group: 'org.jetbrains.kotlin'
-    }
+    testImplementation 'com.github.fabioCollini.daggermock:daggermock:0.8.3'
+    testImplementation 'com.github.fabioCollini.daggermock:daggermock-kotlin:0.8.3'
+    testImplementation('com.nhaarman:mockito-kotlin-kt1.1:1.5.0')
+    kaptAndroidTest 'com.google.dagger:dagger-compiler:2.54'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'com.github.fabioCollini.daggermock:daggermock:0.8.3'
+    androidTestImplementation 'com.github.fabioCollini.daggermock:daggermock-kotlin:0.8.3'
+    androidTestImplementation 'org.mockito:mockito-android:3.12.4'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+    androidTestImplementation 'com.nhaarman:mockito-kotlin-kt1.1:1.5.0'
     androidTestImplementation 'com.github.tmurakami:dexopener:0.10.3'
     androidTestImplementation 'com.squareup.rx.idler:rx2-idler:0.9.0'
 }
