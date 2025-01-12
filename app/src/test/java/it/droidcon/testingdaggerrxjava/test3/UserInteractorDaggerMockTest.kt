@@ -19,8 +19,11 @@ import it.droidcon.testingdaggerrxjava.userlist.UserListPresenter
 import org.assertj.core.api.Java6Assertions.assertThat
 import org.junit.Rule
 import org.junit.Test
+import org.junit.runner.RunWith
 import org.mockito.Mockito.`when`
+import org.robolectric.RobolectricTestRunner
 
+@RunWith(RobolectricTestRunner::class)
 class UserInteractorDaggerMockTest {
     @get:Rule val daggerMockRule = DaggerMockRule(ApplicationComponent::class.java, UserInteractorModule(), StackOverflowServiceModule())
             .providesMock(UserListActivity::class.java)

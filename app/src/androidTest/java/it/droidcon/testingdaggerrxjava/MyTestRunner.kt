@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package it.droidcon.testingdaggerrxjava
 
 import com.github.tmurakami.dexopener.DexOpenerAndroidJUnitRunner

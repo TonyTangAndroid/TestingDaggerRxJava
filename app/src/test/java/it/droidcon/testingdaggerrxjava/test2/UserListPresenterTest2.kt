@@ -13,8 +13,11 @@ import it.droidcon.testingdaggerrxjava.userlist.UserListPresenter
 import it.droidcon.testingdaggerrxjava.willReturnJust
 import org.junit.Rule
 import org.junit.Test
+import org.junit.runner.RunWith
 import org.mockito.Mockito.verify
+import org.robolectric.RobolectricTestRunner
 
+@RunWith(RobolectricTestRunner::class)
 class UserListPresenterTest2 {
 
     @get:Rule val daggerMockRule = DaggerMock.rule<ApplicationComponent>(UserInteractorModule())
