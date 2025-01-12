@@ -21,3 +21,5 @@ dependencyResolutionManagement {
 rootProject.name = "TestingDaggerRxJava"
 
 include ':app'
+include ':main_thread'
+include ':scheduler_provider'
