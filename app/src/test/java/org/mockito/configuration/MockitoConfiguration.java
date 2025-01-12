@@ -1,7 +1,7 @@
 package org.mockito.configuration;
 
-import android.support.annotation.NonNull;
 
+import androidx.annotation.NonNull;
 import org.mockito.internal.stubbing.defaultanswers.ReturnsEmptyValues;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;

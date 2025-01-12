@@ -5,6 +5,7 @@ import org.junit.Test
 import org.mockito.Mockito
 
 class DaggerMockExample {
+   @dagger.Module
     class MyModule {
         @Provides
         fun provideString() = "myString"
@@ -28,9 +29,10 @@ class DaggerMockExample {
                         ?: invocation.method(module, *invocation.arguments)
             }
 
-    private fun collectTestFields() =
-            mapOf(
-                    String::class.java to "test",
-                    Integer.TYPE to 456
-            )
+    private fun collectTestFields(): Map<Class<*>, Any> {
+      return mapOf(
+        String::class.java to "test",
+        Integer.TYPE to 456
+      )
+    }
 }

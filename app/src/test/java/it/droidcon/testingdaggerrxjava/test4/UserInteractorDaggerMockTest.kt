@@ -20,9 +20,11 @@ import it.droidcon.testingdaggerrxjava.userlist.UserListActivity
 import it.droidcon.testingdaggerrxjava.userlist.UserListPresenter
 import org.junit.Rule
 import org.junit.Test
+import org.junit.runner.RunWith
 import org.mockito.Mockito.`when`
+import org.robolectric.RobolectricTestRunner
 import java.util.concurrent.TimeUnit
-
+@RunWith(RobolectricTestRunner::class)
 class UserInteractorDaggerMockTest {
     @get:Rule val daggerMockRule = DaggerMockRule(ApplicationComponent::class.java, UserInteractorModule(), StackOverflowServiceModule())
             .providesMock(UserListActivity::class.java)

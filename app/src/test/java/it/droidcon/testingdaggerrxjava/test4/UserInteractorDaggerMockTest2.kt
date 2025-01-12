@@ -21,8 +21,10 @@ import it.droidcon.testingdaggerrxjava.willReturn
 import it.droidcon.testingdaggerrxjava.willReturnJust
 import org.junit.Rule
 import org.junit.Test
+import org.junit.runner.RunWith
+import org.robolectric.RobolectricTestRunner
 import java.util.concurrent.TimeUnit
-
+@RunWith(RobolectricTestRunner::class)
 class UserInteractorDaggerMockTest2 {
     @get:Rule
     val daggerMockRule = DaggerMock.rule<ApplicationComponent>(UserInteractorModule(), StackOverflowServiceModule()) {

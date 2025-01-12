@@ -7,7 +7,7 @@ android {
     compileSdk 35
     defaultConfig {
         applicationId "it.droidcon.testingdaggerrxjava"
-        minSdkVersion 26
+        minSdk 26
         //noinspection EditedTargetSdkVersion
         targetSdk 35
         versionCode 1
@@ -21,6 +21,11 @@ android {
     sourceSets {
         androidTest.java.srcDirs += "src/test-common/java"
         test.java.srcDirs += "src/test-common/java"
+    }
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
     }
 }
 
@@ -48,6 +53,7 @@ dependencies {
     testImplementation 'com.github.fabioCollini.daggermock:daggermock:0.8.3'
     testImplementation 'com.github.fabioCollini.daggermock:daggermock-kotlin:0.8.3'
     testImplementation('com.nhaarman:mockito-kotlin-kt1.1:1.5.0')
+    testImplementation 'org.robolectric:robolectric:4.14.1'
     kaptAndroidTest 'com.google.dagger:dagger-compiler:2.54'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     androidTestImplementation 'com.github.fabioCollini.daggermock:daggermock:0.8.3'
@@ -58,4 +64,5 @@ dependencies {
     androidTestImplementation 'com.nhaarman:mockito-kotlin-kt1.1:1.5.0'
     androidTestImplementation 'com.github.tmurakami:dexopener:0.10.3'
     androidTestImplementation 'com.squareup.rx.idler:rx2-idler:0.9.0'
+
 }
